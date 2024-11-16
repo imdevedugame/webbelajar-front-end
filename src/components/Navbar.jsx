@@ -4,11 +4,7 @@ import React, { useState } from "react";
 function TriggerButton({ isOpen, onClick }) {
   return (
     <div className="block sm:hidden">
-      <button
-        type="button"
-        className={isOpen ? "text-white" : "text-black"}
-        onClick={onClick}
-      >
+      <button type="button" onClick={onClick}>
         <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
           {!isOpen ? (
             <path
@@ -33,11 +29,11 @@ function TriggerButton({ isOpen, onClick }) {
 function Menu({ isOpen }) {
   return (
     <div
-      className={`bg-black/70 text-white sm:bg-transparent sm:text-black absolute z-10 sm:static h-[90dvh] sm:h-full inset-x-0 bottom-0 transition-all duration-300 ease-in-out sm:opacity-100 pointer-events-auto ${
-        isOpen ? "opacity-100" : "opacity-0 pointer-events-none "
-      }`}
+      className={` ${
+        isOpen ? " right-0 " : "-right-[100%] "
+      }absolute bg-black/50 sm:bg-white top-0 z-50 mt-[10vh] w-full sm:w-auto h-[90vh] sm:h-fit sm:mt-0 sm:static flex sm:block justify-end transition-all`}
     >
-      <ul className="flex flex-col sm:flex-row h-full text-center text-lg justify-center items-center space-y-6 sm:space-y-0 sm:space-x-6">
+      <ul className=" bg-white w-1/4 h-full flex flex-col sm:flex-row text-center text-lg  items-center space-y-6 sm:space-y-0 sm:space-x-6">
         <li>
           <a href="#">Home</a>
         </li>
@@ -58,20 +54,20 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`${
-        isOpen ? "bg-black/70 text-white" : "bg-transparent text-black"
-      } font-serif container mx-auto h-[10dvh] p-4 sm:px-6 lg:px-8 flex items-center justify-between transition-all duration-300 ease-in-out `}
+      className={` bg-white text-black font-serif w-full fixed top-0 z-50 transition-all duration-300 ease-in-out shadow-md`}
     >
-      {/* Brand/Logo */}
-      <div>
-        <h1 className="font-bold text-2xl">DU</h1>
+      <div className="container mx-auto h-[10vh] px-4 sm:px-6 lg:px-8 flex items-center justify-between ">
+        {/* Brand/Logo */}
+        <div>
+          <h1 className="font-bold text-2xl">DU</h1>
+        </div>
+
+        {/* Trigger Button */}
+        <TriggerButton isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
+
+        {/* Menu */}
+        <Menu isOpen={isOpen} />
       </div>
-
-      {/* Trigger Button */}
-      <TriggerButton isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
-
-      {/* Menu */}
-      <Menu isOpen={isOpen} />
     </nav>
   );
 }
