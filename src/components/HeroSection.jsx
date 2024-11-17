@@ -3,9 +3,9 @@ import HeroImg from "../assets/hero-img.jpg";
 
 export default function HeroSection() {
   return (
-    <section className="font-serif w-full grid grid-cols-1 sm:grid-cols-2 items-center justify-center h-screen pt-[10dvh]">
+    <section className="font-serif w-full grid grid-cols-1 sm:grid-cols-2 items-center justify-items-center min-h-screen sm:max-h-screen pt-[10dvh]">
       {/* left side */}
-      <div className="">
+      <div className="w-full">
         <div className="relative mx-auto sm:mx-0 w-full sm:w-[90%] aspect-square">
           <div className="bg-gray-800 w-[95%] aspect-square p-1 shadow-md absolute top-0 left-0">
             <div className="bg-white w-[100%] aspect-square"></div>
