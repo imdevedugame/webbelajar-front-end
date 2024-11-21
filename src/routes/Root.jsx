@@ -1,3 +1,4 @@
+import Footer from "../components/Footer";
 import HeroSection from "../components/HeroSection";
 import Navbar from "../components/Navbar";
 import PortfolioSection from "../components/PortfolioSection";
@@ -12,6 +13,7 @@ export default function Root() {
         <PortfolioSection />
         <TechSection />
       </main>
+      <Footer />
     </>
   );
 }
