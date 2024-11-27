@@ -41,7 +41,7 @@ function Menu({ isOpen }) {
           <a href="#">Portfolio</a>
         </li>
         <li>
-          <a href="#">Contact</a>
+          <a href="/contact">Contact</a>
         </li>
       </ul>
     </div>
