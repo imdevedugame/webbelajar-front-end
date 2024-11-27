@@ -35,7 +35,7 @@ function Menu({ isOpen }) {
     >
       <ul className=" bg-white w-1/4 h-full flex flex-col sm:flex-row text-center text-lg  items-center space-y-6 sm:space-y-0 sm:space-x-6">
         <li>
-          <a href="#">Home</a>
+          <a href="/">Home</a>
         </li>
         <li>
           <a href="#">Portfolio</a>
