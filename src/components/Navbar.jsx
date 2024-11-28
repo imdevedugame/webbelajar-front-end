@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 // Trigger Button Component
 function TriggerButton({ isOpen, onClick }) {
@@ -35,13 +36,13 @@ function Menu({ isOpen }) {
     >
       <ul className=" bg-white w-1/4 h-full flex flex-col sm:flex-row text-center text-lg  items-center space-y-6 sm:space-y-0 sm:space-x-6">
         <li>
-          <a href="/">Home</a>
+          <Link to="/">Home</Link>
         </li>
         <li>
           <a href="#">Portfolio</a>
         </li>
         <li>
-          <a href="/contact">Contact</a>
+          <Link to="/contact">Contact</Link>
         </li>
       </ul>
     </div>
